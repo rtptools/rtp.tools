@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTP Tools - MetaWin Tracker Coming Soon</title>
+    <link rel="icon" type="image/png" href="rtp-logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .logo {
+            display: block;
+            width: 200px;
+            height: auto;
+            margin: 0 auto 2rem auto;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #5ee7df, #b490ca);
+            color: #0a0a0f;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .app-name span {
+            background: linear-gradient(90deg, #5ee7df, #b490ca);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #a0a0b0;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .future-note {
+            font-size: 1rem;
+            color: #7a7a8a;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            width: 200px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            border-color: rgba(94, 231, 223, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            font-size: 0.85rem;
+            color: #a0a0b0;
+        }
+
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-bottom: 3rem;
+            cursor: default;
+            opacity: 0.7;
+        }
+
+        .app-store-btn:hover {
+            border-color: #5ee7df;
+            box-shadow: 0 0 20px rgba(94, 231, 223, 0.2);
+        }
+
+        .app-store-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .app-store-text {
+            text-align: left;
+        }
+
+        .app-store-text small {
+            font-size: 0.65rem;
+            opacity: 0.8;
+        }
+
+        .app-store-text div {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .x-link-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(90deg, #5ee7df, #b490ca);
+            color: #0a0a0f;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            margin: 0 auto 2rem auto;
+            font-size: 1rem;
+            width: fit-content;
+        }
+
+        .x-link-top:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(94, 231, 223, 0.4);
+        }
+
+        .x-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        footer {
+            color: #505060;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .app-name {
+                font-size: 2.5rem;
+            }
+
+            .features {
+                gap: 1rem;
+            }
+
+            .feature {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="rtp-logo.png" alt="RTP Tools Logo" class="logo">
+
+        <a href="https://x.com/RTPTools" target="_blank" rel="noopener noreferrer" class="x-link-top">
+            <svg class="x-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            Follow @RTPTools
+        </a>
+
+        <h1 class="app-name"><span>MetaWin Tracker</span></h1>
+
+        <p class="tagline">
+            Your ultimate companion for casino analytics. Track your performance,
+            analyze your history, and gain insights like never before.
+        </p>
+
+        <p class="future-note">
+            Launching first with MetaWin — more casinos coming soon.
+        </p>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Real-time Stats</div>
+                <div class="feature-desc">Monitor your performance with live analytics</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <div class="feature-title">Deep Insights</div>
+                <div class="feature-desc">Understand your patterns and trends</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎮</div>
+                <div class="feature-title">Game History</div>
+                <div class="feature-desc">Complete record of all your activity</div>
+            </div>
+        </div>
+
+        <div class="app-store-btn">
+            <svg class="app-store-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <div class="app-store-text">
+                <small>Coming Soon on the</small>
+                <div>App Store</div>
+            </div>
+        </div>
+
+        <footer>
+        &copy; 2026 RTP Tools LLC. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
